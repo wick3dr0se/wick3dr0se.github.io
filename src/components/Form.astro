@@ -1,0 +1,32 @@
+<summary id="contain">
+    <form method="POST" id="form">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Jane Doe"/>
+        <label>Email</label>
+        <input type="text" name="email" placeholder="example@email.com"/>
+        <label>Subject</label>
+        <textarea name="subject"/ placeholder="Inquiry about services (WIP)"/>
+        <button id="form__btn">Submit</button>
+    </form>
+</summary>
+
+<style lang="scss">
+    #contain {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    #form {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        padding: 1% 2%;
+        margin: 2% 0;
+        background-color: var(--suede);
+        color: white;
+        &__btn {
+            margin-top: 10%;
+            align-self: center;
+        }
+    }
+</style>

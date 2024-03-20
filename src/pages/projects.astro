@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Projects">
+    <main id="contain">
+        <Card
+            href="https://github.com/wick3dr0se/matrix"
+            img="https://raw.githubusercontent.com/wick3dr0se/matrix/main/matrix.gif"
+            title="Matrix"
+        />
+        <Card
+            href="https://github.com/wick3dr0se/snake"
+            img="https://raw.githubusercontent.com/wick3dr0se/snake/main/snake.gif"
+            title="Snake"
+        />
+        <Card
+            href="https://github.com/wick3dr0se/fml"
+            img="https://raw.githubusercontent.com/wick3dr0se/fml/main/fml.gif"
+            title="FML"
+        />
+    <main>
+</Layout>
+
+<style lang="scss">
+    #contain {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+</style>

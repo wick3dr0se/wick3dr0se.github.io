@@ -1,0 +1,45 @@
+---
+const items = ["Projects", "Services", "Contact"];
+---
+
+<nav><ul id="nav__menu">
+        {items.map((item) => (<li id="nav__menu__btn">
+            <a id="nav__menu__btn__link" href={item.toLowerCase()}>{item}</a>
+        </li>))}
+</ul></nav>
+
+<style lang="scss">
+    #nav__menu {
+        list-style-type: none;
+        &__btn {
+            display: inline;
+            margin-left: 2vw;
+            &__link {
+                position: relative;
+                text-decoration: none;
+                color: white;
+                transition: color 0.6s ease-in-out;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left:0;
+                    width: 0;
+                    height: 1px;
+                    transition: width 0.3s ease-in-out;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) &__link:hover {
+                    color: var(--accent#{$i});
+                    &::after {
+                        background-color: var(--accent#{$i});
+                    }
+                }
+            }
+        }
+    }
+</style>

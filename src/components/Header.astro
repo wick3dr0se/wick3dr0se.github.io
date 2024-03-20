@@ -1,0 +1,54 @@
+---
+import Nav from './Nav.astro'
+---
+
+<script>
+    const header = document.getElementById('header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function() {
+        let currentScroll = window.scrollY || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop) {
+            header?.classList.remove('visible');
+        } else {
+            header?.classList.add('visible');
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+</script>
+
+<header id="header" class="visible">
+    <p id="header__title"><a href="/">wick3dr0se</a></p>
+    <Nav/>
+</header>
+
+<style lang="scss">
+    #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 7vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 2%;
+        background-color: var(--suede);
+        color: white;
+        transition: transform 0.3s ease;
+        transform: translateY(-100%);
+        &.visible {
+            transform: translateY(0);
+        }
+        &__title {
+            a {
+                text-decoration: none;
+                color:white;
+            }
+            a:hover {
+                color: var(--accent);
+            }
+        }
+    }
+</style>
