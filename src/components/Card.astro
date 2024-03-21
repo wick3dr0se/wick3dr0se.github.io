@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
     href: string;
     img: string;
@@ -7,7 +9,7 @@ interface Props {
 
 const { href, img, title } = Astro.props;
 
-async function fetchRepoDescription(repoUrl) {
+async function fetchRepoDescription(repoUrl: string) {
     try {
         const api = `${repoUrl.replace('github.com', 'api.github.com/repos')}`;
         const response = await fetch(api);
@@ -28,7 +30,7 @@ const desc = await fetchRepoDescription(href);
 ---
 
 <section id="card">
-    <a href={href} data-astro-prefetch><img src={img} id="card__img" alt={title}/></a>
+    <a href={href}><Image id="card__img" src={img} alt={title} inferSize/></a>
     <h3>{title}</h3>
     <p>{desc}</p>
 </section>
