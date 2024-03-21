@@ -1,5 +1,5 @@
 ---
-const items = ["Projects", "Services", "Contact"];
+const items = ["Blog", "Projects", "Services", "Contact"];
 ---
 
 <nav><ul id="nav__menu">
@@ -32,9 +32,9 @@ const items = ["Projects", "Services", "Contact"];
                     width: 100%;
                 }
             }
-            @for $i from 1 through 3 {
+            @for $i from 1 through 4 {
                 &:nth-child(#{$i}) &__link:hover {
-                    color: var(--accent#{$i});
+                    //color: var(--accent#{$i});
                     &::after {
                         background-color: var(--accent#{$i});
                     }
