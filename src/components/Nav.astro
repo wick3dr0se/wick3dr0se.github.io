@@ -4,7 +4,7 @@ const items = ["Blog", "Projects", "Services", "Contact"];
 
 <nav><ul id="nav__menu">
         {items.map((item) => (<li id="nav__menu__btn">
-            <a id="nav__menu__btn__link" href={item.toLowerCase()}>{item}</a>
+            <a id="nav__menu__btn__link" href={`/${item.toLowerCase()}`}>{item}</a>
         </li>))}
 </ul></nav>
 
