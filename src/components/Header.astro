@@ -18,11 +18,13 @@ import Nav from './Nav.astro'
 </script>
 
 <header id="header" class="visible">
-    <p id="header__title"><a href="/">wick3dr0se</a></p>
+    <p id="header__title"><a id="header__title__link" href="/">wick3dr0se</a></p>
     <Nav/>
 </header>
 
 <style lang="scss">
+    @import '../common.scss';
+
     #header {
         position: fixed;
         top: 0;
@@ -34,20 +36,27 @@ import Nav from './Nav.astro'
         align-items: center;
         box-sizing: border-box;
         padding: 0 2%;
-        background-color: var(--suede);
-        color: white;
+        background-color: rgba(var(--surface0), 0.9);
+        box-shadow: 0 1px 5px #00000096;
         transition: transform 0.3s ease;
         transform: translateY(-100%);
+        backdrop-filter: blur(0);
         &.visible {
             transform: translateY(0);
+            backdrop-filter: blur(2px);
         }
         &__title {
-            a {
-                text-decoration: none;
-                color:white;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.2s ease-in-out;
+            &:hover {
+                transform: scale(1.1);
             }
-            a:hover {
-                color: var(--accent);
+            &__link {
+                @include anim-underline;
+                &:hover::after {
+                    background-color: var(--red);
+                }
             }
         }
     }

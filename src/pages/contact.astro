@@ -7,14 +7,14 @@ import { Github, Mastodon, Lemmy, Reddit, Discord } from 'simple-icons-astro';
 <Layout title="Contact">
     <main id="main">
         <section id="platforms">
-            <a href="https://github.com/wick3dr0se/"><Github id="platforms__github" class="icon"/></a>
-            <a href="https://fosstodon.org/@wick3dr0se/"><Mastodon id="platforms__mastodon" class="icon"/></a>
-            <a href="https://lemmy.ml/u/wick3dr0se/"><Lemmy id="platforms__lemmy" class="icon"/></a>
-            <a href="https://reddit.com/user/wick3dr0se/"><Reddit id="platforms__reddit" class="icon"/></a>
-            <a href="https://discord.com/invite/DCznYuU4Ms"><Discord id="platforms__discord" class="icon"/></a>
+            <a href="https://github.com/wick3dr0se/"><Github id="platforms__github"/></a>
+            <a href="https://fosstodon.org/@wick3dr0se/"><Mastodon id="platforms__mastodon"/></a>
+            <a href="https://lemmy.ml/u/wick3dr0se/"><Lemmy id="platforms__lemmy"/></a>
+            <a href="https://reddit.com/user/wick3dr0se/"><Reddit id="platforms__reddit"/></a>
+            <a href="https://discord.com/invite/DCznYuU4Ms"><Discord id="platforms__discord"/></a>
         </section>
         <hr/>
-        <Form id="form"/>
+        <Form/>
     </main>
 </Layout>
 
@@ -22,23 +22,18 @@ import { Github, Mastodon, Lemmy, Reddit, Discord } from 'simple-icons-astro';
     #platforms {
         display: flex;
         justify-content: space-around;
-        &__github {
-            color: #181717;
-        }
-        &__mastodon {
-            color: #3088D4;
-        }
-        &__lemmy {
-            color: black;
-        }
-        &__reddit {
-            color: #FF4500;
-        }
-        &__discord {
-            color: #7289DA;
+        padding: 1% 0;
+        &__github { color: #181717; }
+        &__mastodon { color: #3088D4; }
+        &__lemmy { color: black; }
+        &__reddit { color: #FF4500; }
+        &__discord { color: #7289DA; }
+        a * {
+            transition: transform 0.2s ease-in-out;
         }
         a *:hover {
-            filter: invert(40%);
+            transform: scale(1.2);
+            filter: brightness(130%);
         }
     }
 </style>

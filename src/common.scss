@@ -1,0 +1,16 @@
+@mixin anim_underline() {
+    text-decoration: none;
+    color: white;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        transition: width 0.3s ease-in-out;
+    }
+    &:hover::after {
+        width: 100%;
+    }
+}

@@ -1,18 +1,18 @@
 <summary id="contain">
     <form method="POST" id="form">
         <label>Name</label>
-        <input type="text" name="name" placeholder="Jane Doe"/>
+        <input class="field" type="text" name="name" placeholder="Jane Doe"/>
         <label>Email</label>
-        <input type="text" name="email" placeholder="example@email.com"/>
+        <input class="field" type="text" name="email" placeholder="example@email.com"/>
         <label>Subject</label>
-        <textarea name="subject"/ placeholder="Inquiry about services (WIP)"/>
+        <textarea class="field" name="subject" rows="10" placeholder="Inquiry about services (WIP)"/>
         <button id="form__btn">Submit</button>
     </form>
 </summary>
 
 <style lang="scss">
     #contain {
-        max-width: 350px;
+        max-width: 400px;
         margin: 0 auto;
     }
     #form {
@@ -20,13 +20,24 @@
         display: flex;
         flex-direction: column;
         border-radius: 15px;
-        padding: 1% 2%;
-        margin: 2% 0;
-        background-color: var(--suede);
+        padding: 3% 10%;
+        margin: 4% 0;
+        background-color: var(--surface1);
         color: white;
+        box-shadow: 8px 8px 8px #00000096;
+        .field {
+            border-radius: 12px;
+            padding: 1% 3%;
+            margin: 2% 0;
+            border: none;
+        }
         &__btn {
-            margin-top: 10%;
+            margin-top: 8%;
             align-self: center;
+            border-radius: 10px;
+            background-color: #00000000;
+            border:none;
+            box-shadow: 0 2px 4px #00000096;
         }
     }
 </style>
