@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: arch-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
@@ -20,7 +20,7 @@ jobs:
         uses: withastro/action@v2
   deploy:
     needs: build
-    runs-on: arch-latest
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
