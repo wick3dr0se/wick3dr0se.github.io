@@ -1,45 +1,42 @@
 ---
 import { Image } from 'astro:assets';
 
-interface Props {
-    href: string;
-    img: string;
-    title: string;
+const { href, img, alt } = Astro.props;
+
+interface GHData {
+    name: string;
+    description: string;
+    stargazers_count: number;
+    forks_count: number;
+    subscribers_count: number;
 }
 
-const { href, img, title } = Astro.props;
-
-async function fetchRepoDescription(repoUrl: string) {
-    try {
-        const api = `${repoUrl.replace('github.com', 'api.github.com/repos')}`;
-        const response = await fetch(api);
-
-        if (!response.ok) {
-            throw new Error(`Failed to fetch repository description. Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        return data.description || 'No description available';
-    } catch (error) {
-        console.error('Error fetching repository description:', error);
-        return 'Failed to fetch repository description';
-    }
+async function getGHData(repoUrl: string): Promise<GHData> {
+    const api: string = `${repoUrl.replace('github.com', 'api.github.com/repos')}`;
+    const resp: Response = await fetch(api);
+    return await resp.json();;
 }
 
-const desc = await fetchRepoDescription(href);
+const data = await getGHData(href);
 ---
 
 <section id="card">
-    <a href={href}><Image id="card__img" src={img} alt={title} inferSize/></a>
-    <h3>{title}</h3>
-    <p>{desc}</p>
+    <a href={href}><Image id="card__img" src={img} alt={data.name} inferSize/></a>
+    <h1>{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h1>
+    <p>{data.description}</p>
+    <section id="card__stats">
+        <span>Watchers: {data.subscribers_count}</span>
+        <span>Forks: {data.forks_count}</span>
+        <span>Stars: {data.stargazers_count}</span>
+    </section>
 </section>
 
 <style lang="scss">
     #card {
-        max-width: 300px;
-        padding: 6% 6% 0 6%;
-        margin: 3% 1%;
+        min-width: 300px;;
+        max-width: 400px;
+        padding: 2% 2% 0 2%;
+        margin: 2% 2%;
         border-radius: 15px;
         background-color: var(--surface1);
         color: white;
@@ -48,6 +45,16 @@ const desc = await fetchRepoDescription(href);
             max-width: 100%;
             height: auto;
             border-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+            &:hover {
+                transform: scale(0.9);
+            }
+        }
+        &__stats {
+            display: flex;
+            span {
+                padding: 0 2vw 2vh 0;
+            }
         }
     }
 </style>
