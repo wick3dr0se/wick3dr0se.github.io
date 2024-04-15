@@ -1,5 +1,5 @@
 <summary id="contain">
-    <form method="POST" id="form">
+    <form id="form" method="POST">
         <label>Name</label>
         <input class="field" type="text" name="name" placeholder="Jane Doe"/>
         <label>Email</label>
@@ -23,7 +23,7 @@
         padding: 3% 10%;
         margin: 4% 0;
         background-color: var(--surface1);
-        color: white;
+        color: var(--text);
         box-shadow: 8px 8px 8px #00000096;
         .field {
             border-radius: 12px;
@@ -32,12 +32,18 @@
             border: none;
         }
         &__btn {
-            margin-top: 8%;
+            margin-top: 4%;
             align-self: center;
             border-radius: 10px;
-            background-color: #00000000;
+            background-color: var(--surface1);
+            color: var(--text);
             border:none;
             box-shadow: 0 2px 4px #00000096;
+            transition: transform 0.2s ease-in-out;
+            &:hover {
+                transform: scale(1.1);
+                filter: brightness(160%);
+            }
         }
     }
 </style>
