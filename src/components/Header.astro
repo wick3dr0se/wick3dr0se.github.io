@@ -1,5 +1,7 @@
 ---
 import Nav from './Nav.astro'
+
+const { theme } = Astro.props;
 ---
 
 <script>
@@ -8,55 +10,65 @@ import Nav from './Nav.astro'
 
     window.addEventListener('scroll', function() {
         let currentScroll = window.scrollY || document.documentElement.scrollTop;
+        
         if (currentScroll > lastScrollTop) {
             header?.classList.remove('visible');
         } else {
             header?.classList.add('visible');
         }
+
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 </script>
 
 <header id="header" class="visible">
-    <p id="header__title"><a id="header__title__link" href="/">wick3dr0se</a></p>
-    <Nav/>
+    <p id="header__title">
+        <a id="header__title__link" class={`theme-${theme}`} href="/">wick3dr0se</a>
+    </p>
+    <Nav theme={theme}/>
 </header>
 
 <style lang="scss">
     @import '../common.scss';
 
     #header {
+        z-index: 1;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 7vh;
+        height: 7%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
         padding: 0 2%;
-        background-color: rgba(var(--surface0), 0.9);
         box-shadow: 0 1px 5px #00000096;
         transition: transform 0.3s ease;
-        transform: translateY(-100%);
+        transform: translateY(-106%);
         backdrop-filter: blur(0);
         &.visible {
             transform: translateY(0);
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(1px);
         }
         &__title {
             position: relative;
-            z-index: 2;
             transition: transform 0.2s ease-in-out;
             &:hover {
                 transform: scale(1.1);
             }
             &__link {
+                background: none;
                 @include anim-underline;
                 &:hover::after {
                     background-color: var(--red);
                 }
+            }
+            .theme-dark {
+                color: var((--text));
+            }
+            .theme-light {
+                color: var(--crust);
             }
         }
     }

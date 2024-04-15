@@ -1,9 +1,11 @@
 ---
 const items = ["Blog", "Projects", "Services", "Contact"];
+
+const { theme } = Astro.props;
 ---
 
 <nav><ul id="nav__menu">{items.map((item) => (<li id="nav__menu__btn">
-    <a id="nav__menu__btn__link" href={`/${item.toLowerCase()}`}>{item}</a>
+    <a id="nav__menu__btn__link" class={`theme-${theme}`} href={`/${item.toLowerCase()}`}>{item}</a>
 </li>))}</ul></nav>
 
 <style lang="scss">
@@ -20,12 +22,19 @@ const items = ["Blog", "Projects", "Services", "Contact"];
                 transform: scale(1.1);
             }
             &__link {
+                background: none;
                 @include anim-underline;
             }
             @for $i from 1 through length($nav-colors) {
                 &:nth-child(#{$i}) &__link:hover:after {
                     background-color: var(nth($nav-colors, $i));
                 }
+            }
+            .theme-dark {
+                color: var(--text);
+            }
+            .theme-light {
+                color: var(--crust);
             }
         }
     }

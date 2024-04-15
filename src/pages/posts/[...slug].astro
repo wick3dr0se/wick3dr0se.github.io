@@ -14,4 +14,4 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<LayoutMD frontmatter={entry.data}><Content/></LayoutMD>
+<LayoutMD frontmatter={entry.data} theme="dark"><Content/></LayoutMD>
