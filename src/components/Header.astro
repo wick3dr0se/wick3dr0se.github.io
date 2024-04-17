@@ -1,17 +1,15 @@
 ---
 import Nav from './Nav.astro'
-
-const { theme } = Astro.props;
 ---
 
 <header id="header">
     <p id="header__title">
-        <a id="header__title__link" class={`theme-${theme}`} href="/">wick3dr0se</a>
+        <a id="header__title__link" href="/">wick3dr0se</a>
     </p>
     <a id="avatar" href="https://github.com/wick3dr0se">
         <img id="avatar__img" src="https://github.com/wick3dr0se.png" alt="wick3dr0se avatar"/>
     </a>
-    <Nav theme={theme}/>
+    <Nav/>
 </header>
 
 <style lang="scss">
@@ -26,7 +24,7 @@ const { theme } = Astro.props;
         overflow-y: auto;
         box-sizing: border-box;
         padding: 0 2%;
-        background-color: #1b1927;
+        background-color: var(--royal);
         box-shadow: 0 1px 5px #00000096;
         &__title {
             text-align: center;
@@ -38,6 +36,7 @@ const { theme } = Astro.props;
                 position: relative;
                 background: none;
                 text-decoration: none;
+                color: var(--text);
                 &::after {
                 content: '';
                 position: absolute;
@@ -53,12 +52,6 @@ const { theme } = Astro.props;
                     opacity: 1;
                 }
             }
-            .theme-dark {
-                color: var((--text));
-            }
-            .theme-light {
-                color: var(--crust);
-            }
         }
         #avatar {
             width: 80%;
@@ -72,16 +65,16 @@ const { theme } = Astro.props;
                 box-sizing: border-box;
                 width: 100%;
                 border-radius: 100%;
-                animation: shake 0.7s infinite alternate;
+                animation: shake 1s infinite alternate;
             }
         }
     }
     @keyframes shake {
         0% {
-            transform: rotate(5deg);
+            transform: rotate(9deg);
         }
         100% {
-            transform: rotate(-5deg);
+            transform: rotate(-9deg);
         }
     }
 </style>

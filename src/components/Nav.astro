@@ -1,11 +1,9 @@
 ---
 const items = ["Blog", "Projects", "Services", "Contact"];
-
-const { theme } = Astro.props;
 ---
 
 <nav id="nav__menu"><ul id="nav__menu__list">{items.map((item) => (<li id="nav__menu__list__btn">
-    <a id="nav__menu__list__btn__link" class={`theme-${theme}`} href={`/${item.toLowerCase()}`}>{item}</a>
+    <a id="nav__menu__list__btn__link" href={`/${item.toLowerCase()}`}>{item}</a>
 </li>))}</ul></nav>
 
 <style lang="scss">
@@ -28,7 +26,7 @@ const { theme } = Astro.props;
                     font-size: 2vh;
                     background: none;
                     text-decoration: none;
-                    color: white;
+                    color: var(--text);
                     &::after {
                         content: '';
                         position: absolute;
@@ -46,12 +44,6 @@ const { theme } = Astro.props;
                     &:nth-child(#{$i}) &__link:hover:after {
                         background-color: var(nth($nav-colors, $i));
                     }
-                }
-                .theme-dark {
-                    color: var(--text);
-                }
-                .theme-light {
-                    color: var(--crust);
                 }
             }
         }

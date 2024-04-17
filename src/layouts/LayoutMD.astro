@@ -2,21 +2,24 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { frontmatter, theme } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html class={`theme-${theme}`} lang="en">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator}/>
 		<title>Post - {frontmatter.title}</title>
 	</head>
-	<body class={`theme-${theme}`}>
-        <Header theme={theme}/>
+	<body>
+        <Header/>
         <slot/>
         <p>tags: {frontmatter.tags.join(', ')}</p>
         <Footer/>
@@ -25,24 +28,4 @@ const { frontmatter, theme } = Astro.props;
 
 <style is:global>
     @import '../common.css';
-    
-    /* {
-        border: 1px solid red;
-    }*/
-    .theme-dark {
-        background-color: var(--subtext0);
-        color: var(--crust);
-    }
-    .theme-light {
-        background-color: var(--text);
-        color: var(--crust);
-    }
-    body {
-        min-height: 100%;
-        max-width: 70%;
-        margin: 0 0 10vh 30%;
-        padding: 0 4% 2% 4%;
-        user-select: none;
-        font-family: system-ui, sans-serif;
-    }
 </style>

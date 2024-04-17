@@ -2,17 +2,11 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-let theme = 'dark';
-
-if (Astro.props.theme) {
-    theme = Astro.props.theme;
-}
-
 const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html class={`theme-${theme}`} lang="en">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description">
@@ -24,10 +18,10 @@ const { title } = Astro.props
 		<meta name="generator" content={Astro.generator}/>
 		<title>{title}</title>
 	</head>
-	<body class={`theme-${theme}`}>
+	<body>
         <h2>{title}</h2>
         <hr/>
-        <Header theme={theme}/>
+        <Header/>
         <slot/>
         <Footer/>
     </body>
@@ -35,24 +29,8 @@ const { title } = Astro.props
 
 <style is:global>
     @import '../common.css';
-    
+
     /* {
         border: 1px solid red;
     }*/
-    .theme-dark {
-        background-color: var(--subtext0);
-        color: var(--crust);
-    }
-    .theme-light {
-        background-color: var(--text);
-        color: var(--crust);
-    }
-    body {
-        min-height: 100%;
-        max-width: 70%;
-        margin: 0 0 10vh 30%;
-        padding: 0 4% 2% 4%;
-        user-select: none;
-        font-family: system-ui, sans-serif;
-    }
 </style>
