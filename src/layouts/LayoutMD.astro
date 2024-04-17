@@ -24,19 +24,25 @@ const { frontmatter, theme } = Astro.props;
 </html>
 
 <style is:global>
-    @import 'common.css';
-
+    @import '../common.css';
+    
+    /* {
+        border: 1px solid red;
+    }*/
     .theme-dark {
-        background-color: var(--mantle);
-        color: var(--text);
+        background-color: var(--subtext0);
+        color: var(--crust);
     }
     .theme-light {
         background-color: var(--text);
         color: var(--crust);
     }
     body {
-        margin:7vh 0 10vh 0;
-        padding:1% 3%;
+        min-height: 100%;
+        max-width: 70%;
+        margin: 0 0 10vh 30%;
+        padding: 0 4% 2% 4%;
         user-select: none;
+        font-family: system-ui, sans-serif;
     }
 </style>

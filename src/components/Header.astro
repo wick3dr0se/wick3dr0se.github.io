@@ -4,64 +4,49 @@ import Nav from './Nav.astro'
 const { theme } = Astro.props;
 ---
 
-<script>
-    const header = document.getElementById('header');
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function() {
-        let currentScroll = window.scrollY || document.documentElement.scrollTop;
-        
-        if (currentScroll > lastScrollTop) {
-            header?.classList.remove('visible');
-        } else {
-            header?.classList.add('visible');
-        }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-</script>
-
-<header id="header" class="visible">
+<header id="header">
     <p id="header__title">
         <a id="header__title__link" class={`theme-${theme}`} href="/">wick3dr0se</a>
     </p>
+    <a href="https://github.com/wick3dr0se">
+        <img id="avatar" src="https://github.com/wick3dr0se.png" alt="wick3dr0se avatar"/>
+    </a>
     <Nav theme={theme}/>
 </header>
 
 <style lang="scss">
-    @import '../common.scss';
+    @import '../common.css';
 
     #header {
-        z-index: 1;
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        width: 30%;
+        height: 100%;
+        overflow-y: auto;
         box-sizing: border-box;
         padding: 0 2%;
+        background-color: var(--mantle);
         box-shadow: 0 1px 5px #00000096;
-        transition: transform 0.3s ease;
-        transform: translateY(-106%);
-        backdrop-filter: blur(0);
-        &.visible {
-            transform: translateY(0);
-            backdrop-filter: blur(1px);
-        }
         &__title {
-            position: relative;
-            transition: transform 0.2s ease-in-out;
-            &:hover {
-                transform: scale(1.1);
-            }
             &__link {
+                position: relative;
                 background: none;
-                @include anim-underline;
+                text-decoration: none;
+                color: white;
+                &::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: var(--red);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                }
                 &:hover::after {
-                    background-color: var(--red);
+                    opacity: 1;
                 }
             }
             .theme-dark {
@@ -70,6 +55,12 @@ const { theme } = Astro.props;
             .theme-light {
                 color: var(--crust);
             }
+        }
+        #avatar {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 100%;
         }
     }
 </style>

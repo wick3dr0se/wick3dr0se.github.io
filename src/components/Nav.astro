@@ -4,8 +4,8 @@ const items = ["Blog", "Projects", "Services", "Contact"];
 const { theme } = Astro.props;
 ---
 
-<nav><ul id="nav__menu">{items.map((item) => (<li id="nav__menu__btn">
-    <a id="nav__menu__btn__link" class={`theme-${theme}`} href={`/${item.toLowerCase()}`}>{item}</a>
+<nav id="nav__menu"><ul id="nav__menu__list">{items.map((item) => (<li id="nav__menu__list__btn">
+    <a id="nav__menu__list__btn__link" class={`theme-${theme}`} href={`/${item.toLowerCase()}`}>{item}</a>
 </li>))}</ul></nav>
 
 <style lang="scss">
@@ -13,28 +13,44 @@ const { theme } = Astro.props;
     $nav-colors: (--peach, --blue, --mauve, --green);
 
     #nav__menu {
-        list-style-type: none;
-        &__btn {
-            display: inline-block;
-            margin-left: 2vw;
-            transition: transform 0.2s ease-in-out;
-            &:hover {
-                transform: scale(1.1);
-            }
-            &__link {
-                background: none;
-                @include anim-underline;
-            }
-            @for $i from 1 through length($nav-colors) {
-                &:nth-child(#{$i}) &__link:hover:after {
-                    background-color: var(nth($nav-colors, $i));
+        &__list{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            &__btn {
+                position: relative;
+                &__link {
+                    display: block;
+                    padding: 10% 0;
+                    width: 100%;
+                    text-align:center;
+                    background: none;
+                    text-decoration: none;
+                    color: white;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -1px;
+                        left: 0;
+                        width: 0;
+                        height: 1px;
+                        transition: width 0.3s ease-in-out;
+                    }
+                    &:hover::after {
+                        width: 100%;
+                    }
                 }
-            }
-            .theme-dark {
-                color: var(--text);
-            }
-            .theme-light {
-                color: var(--crust);
+                @for $i from 1 through length($nav-colors) {
+                    &:nth-child(#{$i}) &__link:hover:after {
+                        background-color: var(nth($nav-colors, $i));
+                    }
+                }
+                .theme-dark {
+                    color: var(--text);
+                }
+                .theme-light {
+                    color: var(--crust);
+                }
             }
         }
     }
