@@ -29,11 +29,15 @@ const { theme } = Astro.props;
         background-color: var(--mantle);
         box-shadow: 0 1px 5px #00000096;
         &__title {
+            text-align: center;
+            font-family: "Pacifico", cursive;
+            font-size: 32px;
+            font-weight: 400;
+            font-style: normal;
             &__link {
                 position: relative;
                 background: none;
                 text-decoration: none;
-                color: white;
                 &::after {
                 content: '';
                 position: absolute;
@@ -61,6 +65,10 @@ const { theme } = Astro.props;
             width: 80%;
             margin: 0 auto;
             border-radius: 100%;
+            transition: transform 0.2s ease-in-out;
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 </style>
