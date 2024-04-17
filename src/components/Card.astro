@@ -21,19 +21,23 @@ const data = await getGHData(href);
 ---
 
 <section id="card">
-    <a href={href}><Image id="card__img" src={img} alt={data.name} inferSize/></a>
-    <h1>{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h1>
-    <p>{data.description}</p>
-    <section id="card__stats">
-        <span>Watchers: {data.subscribers_count}</span>
-        <span>Forks: {data.forks_count}</span>
-        <span>Stars: {data.stargazers_count}</span>
-    </section>
+    { data.name ? (
+        <a href={href}><Image id="card__img" src={img} alt={data.name} inferSize/></a>
+        <h1>{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h1>
+        <p>{data.description}</p>
+        <section id="card__stats">
+            <span>Watchers: {data.subscribers_count}</span>
+            <span>Forks: {data.forks_count}</span>
+            <span>Stars: {data.stargazers_count}</span>
+        </section>
+    ) : (
+        <p>Error: Failed parsing repository</p>
+    )}
 </section>
 
 <style lang="scss">
     #card {
-        min-width: 300px;;
+        min-width: 200px;
         max-width: 400px;
         padding: 2% 2% 0 2%;
         margin: 2% 2%;
