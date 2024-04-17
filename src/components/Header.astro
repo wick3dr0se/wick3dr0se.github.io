@@ -26,7 +26,7 @@ const { theme } = Astro.props;
         overflow-y: auto;
         box-sizing: border-box;
         padding: 0 2%;
-        background-color: var(--mantle);
+        background-color: #1b1927;
         box-shadow: 0 1px 5px #00000096;
         &__title {
             text-align: center;
@@ -64,7 +64,6 @@ const { theme } = Astro.props;
             width: 80%;
             display: block;
             margin: 0 auto;
-            border-radius: 100%;
             transition: transform 0.3s ease-in-out;
             &:hover {
                 transform: scale(1.1);
@@ -72,6 +71,7 @@ const { theme } = Astro.props;
             &__img {
                 box-sizing: border-box;
                 width: 100%;
+                border-radius: 100%;
                 animation: shake 0.7s infinite alternate;
             }
         }
