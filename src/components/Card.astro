@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 
 const { href, img } = Astro.props;
 
@@ -23,12 +24,12 @@ const data = await getGHData(href);
 <section id="card">
     { data.name ? (
         <a href={href}><Image id="card__img" src={img} alt={data.name} inferSize/></a>
-        <h1>{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h1>
-        <p>{data.description}</p>
         <section id="card__stats">
-            <span>Watchers: {data.subscribers_count}</span>
-            <span>Forks: {data.forks_count}</span>
-            <span>Stars: {data.stargazers_count}</span>
+            <h1>{data.name}</h1>
+            <p>{data.description}</p>
+            <span><Icon name="octicon:eye-24" id="watchers"/> {data.subscribers_count}</span>
+            <span><Icon name="octicon:repo-forked-24" id="forks"/> {data.forks_count}</span>
+            <span><Icon name="octicon:star-24" id="stars"/> {data.stargazers_count}</span>
         </section>
     ) : (
         <p>Error: Failed parsing repository</p>
@@ -55,9 +56,13 @@ const data = await getGHData(href);
             }
         }
         &__stats {
-            display: flex;
+            padding: 0 0 2% 2%;
             span {
-                padding: 0 2vw 2vh 0;
+                padding: 0 2% 2% 0;
+            }
+            #gh-fork {
+                width: 25px;
+                height: auto;
             }
         }
     }

@@ -1,17 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Form from '../components/Form.astro';
-import { Github, Mastodon, Lemmy, Reddit, Discord } from 'simple-icons-astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Contact">
     <main id="main">
         <section id="platforms">
-            <a href="https://github.com/wick3dr0se/"><Github id="platforms__github"/></a>
-            <a href="https://fosstodon.org/@wick3dr0se/"><Mastodon id="platforms__mastodon"/></a>
-            <a href="https://lemmy.ml/u/wick3dr0se/"><Lemmy id="platforms__lemmy"/></a>
-            <a href="https://reddit.com/user/wick3dr0se/"><Reddit id="platforms__reddit"/></a>
-            <a href="https://discord.com/invite/DCznYuU4Ms"><Discord id="platforms__discord"/></a>
+            <a href="https://github.com/wick3dr0se/">
+                <Icon name="line-md:github-loop" id="platforms__github"/>
+            </a>
+            <a href="https://fosstodon.org/@wick3dr0se/">
+                <Icon name="line-md:mastodon" id="platforms__mastodon"/>
+            </a>
+            <a href="https://reddit.com/user/wick3dr0se/">
+                <Icon name="line-md:reddit-loop" id="platforms__reddit"/>
+            </a>
+            <a href="https://discord.com/invite/DCznYuU4Ms">
+                <Icon name="line-md:discord" id="platforms__discord"/>
+            </a>
         </section>
         <hr/>
         <Form/>
@@ -25,15 +32,16 @@ import { Github, Mastodon, Lemmy, Reddit, Discord } from 'simple-icons-astro';
         padding: 1% 0;
         &__github { color: #181717; }
         &__mastodon { color: #3088D4; }
-        &__lemmy { color: black; }
         &__reddit { color: #FF4500; }
         &__discord { color: #7289DA; }
-        a * {
-            transition: transform 0.2s ease-in-out;
+        svg {
+            width: 40px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
             &:hover {
                 transform: scale(1.2);
-                filter: invert(100%);
+                filter: invert(80%);
             }
         }
     }
-</style>
+</style>    

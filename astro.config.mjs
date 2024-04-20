@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,5 +21,6 @@ export default defineConfig({
     image: {
         domains: ["astro-build"]
     },
-    site: 'https://wick3dr0se.github.io'
+    site: 'https://wick3dr0se.github.io',
+    integrations: [icon()]
 });
