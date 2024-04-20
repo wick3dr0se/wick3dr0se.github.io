@@ -1,6 +1,8 @@
 <footer id="footer">
     <p id="footer__attr">&copy; 2024 - Open Source Force</p>
-    <a id="footer__deploy" href="https://github.com/wick3dr0se/wick3dr0se.github.io"><img src="https://github.com/wick3dr0se/wick3dr0se.github.io/actions/workflows/astro.yml/badge.svg" alt="Deploy Status"></a>
+    <a id="footer__deploy" href="https://github.com/wick3dr0se/wick3dr0se.github.io">
+        <img id="footer__deploy__badge" src="https://github.com/wick3dr0se/wick3dr0se.github.io/actions/workflows/astro.yml/badge.svg" alt="Deploy Status">
+    </a>
 </footer>
 
 <style lang="scss">
@@ -23,6 +25,10 @@
         }
         &__deploy {
             transition: transform 0.3s ease-in-out;
+            &__badge {
+                width: auto;
+                height: 10px;
+            }
         }
         &__deploy:hover {
             transform: scale(1.1);
