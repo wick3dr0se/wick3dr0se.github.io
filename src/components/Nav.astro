@@ -2,16 +2,16 @@
 const items = ["Blog", "Projects", "Services", "Contact"];
 ---
 
-<nav id="nav__menu"><ul id="nav__menu__list">{items.map((item) => (<li id="nav__menu__list__btn">
-    <a id="nav__menu__list__btn__link" href={`/${item.toLowerCase()}`}>{item}</a>
+<nav><ul id="list">{items.map((item) => (<li id="list__btn">
+    <a id="list__btn__link" href={`/${item.toLowerCase()}`}>{item}</a>
 </li>))}</ul></nav>
 
 <style lang="scss">
     @import "../common.css";
     $nav-colors: (--peach, --blue, --mauve, --green);
 
-    #nav__menu {
-        &__list{
+    nav {
+        #list{
             width: 80%;
             list-style-type: none;
             margin: 0 auto;
@@ -23,7 +23,7 @@ const items = ["Blog", "Projects", "Services", "Contact"];
                     padding: 10% 0;
                     width: 100%;
                     text-align:center;
-                    font-size: 2vh;
+                    font-size: 4vw;
                     background: none;
                     text-decoration: none;
                     color: var(--text);

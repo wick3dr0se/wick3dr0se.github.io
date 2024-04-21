@@ -1,22 +1,16 @@
-<summary id="contain">
-    <form id="form" method="POST">
-        <label>Name</label>
-        <input class="field" type="text" name="name" placeholder="Jane Doe"/>
-        <label>Email</label>
-        <input class="field" type="text" name="email" placeholder="example@email.com"/>
-        <label>Subject</label>
-        <textarea class="field" name="subject" rows="10" placeholder="Inquiry about services (WIP)"/>
-        <button id="form__btn">Submit</button>
-    </form>
-</summary>
+<form id="form" method="POST">
+    <label>Name</label>
+    <input class="field" type="text" name="name" placeholder="Jane Doe"/>
+    <label>Email</label>
+    <input class="field" type="text" name="email" placeholder="example@email.com"/>
+    <label>Subject</label>
+    <textarea class="field" name="subject" rows="10" placeholder="Inquiry about services (WIP)"/>
+    <button id="form__btn">Submit</button>
+</form>
 
 <style lang="scss">
-    #contain {
-        max-width: 400px;
-        margin: 0 auto;
-    }
     #form {
-        max-width: 100%;
+        max-width: 400px;
         display: flex;
         flex-direction: column;
         border-radius: 15px;

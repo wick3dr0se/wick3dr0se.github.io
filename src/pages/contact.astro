@@ -5,24 +5,22 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Contact">
-    <main>
-        <div id="platforms">
-            <a href="https://github.com/wick3dr0se/">
-                <Icon name="line-md:github-loop" id="platforms__github"/>
-            </a>
-            <a href="https://fosstodon.org/@wick3dr0se/">
-                <Icon name="line-md:mastodon" id="platforms__mastodon"/>
-            </a>
-            <a href="https://reddit.com/user/wick3dr0se/">
-                <Icon name="line-md:reddit-loop" id="platforms__reddit"/>
-            </a>
-            <a href="https://discord.com/invite/DCznYuU4Ms">
-                <Icon name="line-md:discord" id="platforms__discord"/>
-            </a>
-        </div>
-        <hr/>
-        <Form/>
-    </main>
+    <div id="platforms">
+        <a href="https://github.com/wick3dr0se/">
+            <Icon name="line-md:github-loop" id="platforms__github"/>
+        </a>
+        <a href="https://fosstodon.org/@wick3dr0se/">
+            <Icon name="line-md:mastodon" id="platforms__mastodon"/>
+        </a>
+        <a href="https://reddit.com/user/wick3dr0se/">
+            <Icon name="line-md:reddit-loop" id="platforms__reddit"/>
+        </a>
+        <a href="https://discord.com/invite/DCznYuU4Ms">
+            <Icon name="line-md:discord" id="platforms__discord"/>
+        </a>
+    </div>
+    <hr/>
+    <Form/>
 </Layout>
 
 <style lang="scss">

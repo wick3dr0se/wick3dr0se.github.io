@@ -3,9 +3,9 @@ import Nav from './Nav.astro'
 ---
 
 <header id="header">
-    <span id="header__title">
+    <div id="header__title">
         <a id="header__title__link" href="/">wick3dr0se</a>
-    </span>
+    </div>
     <a id="avatar" href="https://github.com/wick3dr0se">
         <img id="avatar__img" src="https://github.com/wick3dr0se.png" alt="wick3dr0se avatar"/>
     </a>
@@ -28,25 +28,25 @@ import Nav from './Nav.astro'
         box-shadow: 0 1px 5px #00000096;
         &__title {
             text-align: center;
+            margin: 1vh 0;
             font-family: "Pacifico", cursive;
             font-size: 5vw;
             font-weight: 400;
             font-style: normal;
             &__link {
                 position: relative;
-                background: none;
                 text-decoration: none;
                 color: var(--text);
                 &::after {
-                content: '';
-                position: absolute;
-                bottom: -1px;
-                left: 0;
-                width: 100%;
-                height: 1px;
-                background-color: var(--red);
-                opacity: 0;
-                transition: opacity 0.3s ease;
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--red);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
                 }
                 &:hover::after {
                     opacity: 1;
