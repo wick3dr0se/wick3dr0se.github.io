@@ -40,7 +40,7 @@ You don't have to use raw ANSI escape sequences, you can use an abstraction like
 
 Let's start by initializing the terminal. How this works is up to you but I would utilize the terminal's alternative buffer and disable the cursor. Using the alternative buffer has the advantage of disabling scrolling and allowing us to reset the terminal to its initial state
 
-These sequences are [VT100 ANSI escape sequences](https://vt100.net/docs/vt100-ug/), which are the standard, that terminal maipulation libraries abstract away
+These sequences are [VT100 ANSI escape sequences](https://vt100.net/docs/vt100-ug/), which are the standard, that terminal manipulation libraries abstract away
 
 ```bash
 init_term() {
