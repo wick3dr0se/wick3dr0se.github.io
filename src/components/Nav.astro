@@ -2,48 +2,48 @@
 const items = ["Blog", "Projects", "Services", "Contact"];
 ---
 
-<nav><ul id="list">{items.map((item) => (<li id="list__btn">
-    <a id="list__btn__link" href={`/${item.toLowerCase()}`}>{item}</a>
-</li>))}</ul></nav>
+<nav>
+    <ul id="list">{items.map((item) => (<li id="list__btn">
+        <a id="list__btn__link" href={`/${item.toLowerCase()}`}>{item}</a>
+    </li>))}</ul>
+</nav>
 
 <style lang="scss">
     @import "../common.css";
     $nav-colors: (--peach, --blue, --mauve, --green);
 
-    nav {
-        #list{
-            width: 80%;
-            list-style-type: none;
-            margin: 0 auto;
-            padding: 0;
-            &__btn {
-                position: relative;
-                &__link {
-                    display: block;
-                    padding: 10% 0;
-                    width: 100%;
-                    text-align:center;
-                    font-size: 4vw;
-                    background: none;
-                    text-decoration: none;
-                    color: var(--text);
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 0;
-                        height: 1px;
-                        transition: width 0.3s ease-in-out;
-                    }
-                    &:hover::after {
-                        width: 100%;
-                    }
+    #list{
+        width: 80%;
+        list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+        &__btn {
+            position: relative;
+            &__link {
+                display: block;
+                padding: 10% 0;
+                width: 100%;
+                text-align:center;
+                font-size: 4vw;
+                background: none;
+                text-decoration: none;
+                color: var(--text);
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    transition: width 0.3s ease-in-out;
                 }
-                @for $i from 1 through length($nav-colors) {
-                    &:nth-child(#{$i}) &__link:hover:after {
-                        background-color: var(nth($nav-colors, $i));
-                    }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+            @for $i from 1 through length($nav-colors) {
+                &:nth-child(#{$i}) &__link:hover:after {
+                    background-color: var(nth($nav-colors, $i));
                 }
             }
         }
