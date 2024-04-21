@@ -1,10 +1,10 @@
 ---
-title: "Allocators"
-desc: "Different types of allocators and their concepts"
+title: "Allocator Designs"
+desc: "Different types of allocators, their designs and concepts"
 tags: ["operating systems", "memory", "allocators"]
 ---
 
-# Allocators
+# Allocator Designs
 ## Bump (stack) allocator
 A bump allocator is a simple linear memory allocator that tracks the number of allocations and allocated bytes
 

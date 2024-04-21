@@ -1,6 +1,6 @@
 ---
-title: "Matrix Digital Rain"
-desc: "A stupid simple matrix digital rain implementation and concept"
+title: "Writing a Matrix Digital Rain"
+desc: "Matrix digital rain implementation and concept"
 tags: ["matrix digital rain", "terminal", "TUI", "bash"]
 ---
 # Writing a Matrix Digital Rain
