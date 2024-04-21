@@ -21,7 +21,7 @@ async function getGHData(repoUrl: string): Promise<GHData> {
 const data = await getGHData(href);
 ---
 
-<section id="card">
+<div id="card">
     { data.name ? (
         <a href={href}><Image id="card__img" src={img} alt={data.name} inferSize/></a>
         <section id="card__stats">
@@ -34,7 +34,7 @@ const data = await getGHData(href);
     ) : (
         <p>Error: Failed parsing repository</p>
     )}
-</section>
+</div>
 
 <style lang="scss">
     #card {

@@ -8,12 +8,8 @@ const posts = await getCollection("blog");
 
 <Layout title="Blog">
     <p>What is this? It seems you've stumbled upon cosmic knowledge and technological wonders!</p>
-    <p>Oh, no, wait! It's just my <i>blog</i>.. Instead you may find ramblings on Linux operating systems, Bash scripting and general systems programming!</p>
-  <ul>
-    {
-      posts.map((post) => (
+    <p>Oh, no, wait! It's just my <i>blog</i>.. Instead you may find ramblings on Linux operating systems, Bash scripting and general systems programming</p>
+    <ul>{ posts.map((post) => (
         <Post url={"/posts/" + post.slug} title={post.data.title}/>
-      ))
-    }
-  </ul>
+    ))}</ul>
 </Layout>

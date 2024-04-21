@@ -4,49 +4,53 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Home">
-	<main id="main">
-		<p>Welcome to my domain! I'm wick3dr0se, a hobbyist open source programmer from the United States</p>
-		<h2>About Me</h2>
-		<p>I primarily write a ton of (pure) Bash scripts, mostly TUI's utilizing ANSI escape sequences. I tend to avoid abstractions when possible, like that, so I can learn the inner-workings. Bash is a pretty abstracted language but it's super powerful for simple/automated scripts, installed nearly everywhere and just works when you need it. It's become somewhat of an obsession writing it for me. When I'm not writing scripts I'm diving into various languages such as C, Nim and Rust to further my fundamental understanding and expertise in areas such as systems programming</p>
-		<p>I'm also an Arch Linux user (addict), I'm adept to the terminal and I highly prefer to write CLI/TUI related scripts/programs. I write some web stuff (like this) but nothing fancy. My latest interest is learning about operating system development and I've started <a href="https://github.com/opensource-force/os">doing so in Rust</a></p>
+	<main>
+		<p class="para">Welcome to my domain! I'm wick3dr0se, a hobbyist open source programmer from the United States</p>
+		<section>
+			<h2>About Me</h2>
+			<p class="para">I primarily write a ton of (pure) Bash scripts, mostly TUI's utilizing ANSI escape sequences. I tend to avoid abstractions when possible, so I can learn the inner-workings. Bash is an abstracted language but it's super powerful for simple/automated scripts, installed nearly everywhere and just works when you need it. It's become somewhat of an obsession for me. When I'm not writing scripts I'm diving into various languages such as C, Nim and Rust to further my fundamental understanding and expertise in areas such as systems programming</p>
+			<p>I'm also an Arch Linux user (addict), I'm adept to the terminal and I highly prefer to write CLI/TUI related scripts and programs. I write some web stuff (like this) but nothing fancy. My latest interest is learning about operating system development and I've started <a href="https://github.com/opensource-force/os">doing so in Rust</a></p>
+		<section/>
 		<h2>Hobbies & Interest</h2>
-		<p>Writing CLI/TUI programs primarily for Linux-like operating systems. Interacting with the terminal and low-level concepts such as operating system development. Advocate for open source development and founder of the <a href="https://opensourceforce.net">Open Source Force</a></p>
-		<h2>Languages & Technologies</h2>
-		<section id="lang">
-			<Icon name="simple-icons:gnubash" id="lang__bash"/>
-			<Icon name="simple-icons:rust" id="lang__rust"/>
-			<Icon name="simple-icons:nim" id="lang__nim"/>
-			<Icon name="simple-icons:c" id="lang__c"/>
-			<Icon name="simple-icons:html5" id="lang__html"/>
-			<Icon name="simple-icons:css3" id="lang__css"/>
-			<Icon name="simple-icons:javascript" id="lang__js"/>
-			<Icon name="simple-icons:git" id="lang__git"/>
-			<Icon name="simple-icons:docker" id="lang__docker"/>
-			<Icon name="simple-icons:kubernetes" id="lang__k8"/>
+		<section>
+			<p class="para">Writing CLI/TUI programs primarily for Linux-like operating systems. Interacting with the terminal and low-level concepts such as operating system development. Advocate for open source development and founder of the <a href="https://opensourceforce.net">Open Source Force</a></p>
+		<section/>
+		<section>
+			<h2>Languages & Technologies</h2>
+			<div id="lang">
+				<Icon name="simple-icons:gnubash" id="lang__bash"/>
+				<Icon name="simple-icons:rust" id="lang__rust"/>
+				<Icon name="simple-icons:nim" id="lang__nim"/>
+				<Icon name="simple-icons:c" id="lang__c"/>
+				<Icon name="simple-icons:html5" id="lang__html"/>
+				<Icon name="simple-icons:css3" id="lang__css"/>
+				<Icon name="simple-icons:javascript" id="lang__js"/>
+				<Icon name="simple-icons:git" id="lang__git"/>
+				<Icon name="simple-icons:docker" id="lang__docker"/>
+				<Icon name="simple-icons:kubernetes" id="lang__k8"/>
+			<div/>
 		</section>
 	</main>
 </Layout>
 
 <style lang="scss">
-	#main {
-		#lang {
-			display: flex;
-			justify-content: space-around;
-			flex-wrap: wrap;
-			&__bash { color: #3c4549; }
-			&__nim { color: #efd200; }
-			&__c { color: #5869b8; }
-			&__html { color: #dd4a25; }
-			&__css { color: #006ab5; }
-			&__js { color: #f6d13b; }
-			&__git { color: #d94b34; }
-			&__docker { color: #0091e5; }
-			&__k8 { color: #2f69da; }
-			svg {
-				width: 40px;
-				height: auto;
-				padding: 1vh 2vw;
-			}
+	#lang {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		&__bash { color: #3c4549; }
+		&__nim { color: #efd200; }
+		&__c { color: #5869b8; }
+		&__html { color: #dd4a25; }
+		&__css { color: #006ab5; }
+		&__js { color: #f6d13b; }
+		&__git { color: #d94b34; }
+		&__docker { color: #0091e5; }
+		&__k8 { color: #2f69da; }
+		svg {
+			width: 40px;
+			height: auto;
+			padding: 1vh 2vw;
 		}
 	}
 </style>

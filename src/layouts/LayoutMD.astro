@@ -21,7 +21,7 @@ const { frontmatter } = Astro.props;
 	<body>
         <Header/>
         <slot/>
-        <p>tags: {frontmatter.tags.join(', ')}</p>
+        <span>tags: {frontmatter.tags.join(', ')}</span>
         <Footer/>
     </body>
 </html>
