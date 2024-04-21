@@ -42,3 +42,9 @@ body {
     padding: 0 4% 2% 4%;
     font-family: system-ui, sans-serif;
 }
+.para::first-letter {
+    font-size: 2.8em;
+    float: left;
+    margin: .12em .1em 0 .1em;
+    color: var(--red);
+}
