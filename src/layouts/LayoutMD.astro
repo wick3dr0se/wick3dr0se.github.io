@@ -20,6 +20,8 @@ const { frontmatter } = Astro.props;
 	</head>
 	<body>
         <Header/>
+        <h1>{frontmatter.title}</h1>
+        <hr/>
         <slot/>
         <span>tags: {frontmatter.tags.join(', ')}</span>
         <Footer/>

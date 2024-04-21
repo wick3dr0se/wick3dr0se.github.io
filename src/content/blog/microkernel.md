@@ -4,7 +4,6 @@ desc: "All about microkernel design and concept"
 tags: ["operating systems", "kernel"]
 ---
 
-# Microkernel Design
 A microkernel is a modular and extensible kernel that leverages IPC, allowing process addresses to be isolated from each other and of course the kernel itself. It pushes most components into userland and focuses on keeping the kernel itself as minimal as functionally possible; Meanwhile emphasizing security and simplified testing
 
 ```
