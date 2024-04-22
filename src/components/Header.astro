@@ -7,7 +7,7 @@ import Nav from './Nav.astro'
         <a id="header__title__link" href="/">wick3dr0se</a>
     </div>
     <a id="avatar" href="https://github.com/wick3dr0se">
-        <img id="avatar__img" src="https://github.com/wick3dr0se.png" alt="wick3dr0se avatar"/>
+        <img id="avatar__img" src="/wick3dr0se.png" alt="wick3dr0se avatar"/>
     </a>
     <Nav/>
 </header>
@@ -62,9 +62,8 @@ import Nav from './Nav.astro'
                 transform: scale(1.1);
             }
             &__img {
-                box-sizing: border-box;
                 width: 100%;
-                border-radius: 100%;
+                height: auto;
                 animation: shake 1s infinite alternate;
             }
         }
