@@ -4,6 +4,8 @@ desc: "Matrix digital rain implementation and concept"
 tags: ["matrix digital rain", "terminal", "TUI", "bash"]
 ---
 
+![](../../assets/matrix.gif)
+
 Writing a terminal based matrix digital rain is fairly simple; Even utilizing raw ANSI escape sequences, we can make one in under 20 lines of code with a shell scripting language like Bash. Similarly in most programming languages
 
 For simplicity of the article, we won't implement starting position, random initial character highlighting or anything too fancy. This implementation utilizes the [Select Graphic Rendition](https://vt100.net/docs/vt510-rm/SGR.html), specifically the 4-bit green color sequence for portability as well
