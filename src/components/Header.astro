@@ -1,13 +1,15 @@
 ---
 import Nav from './Nav.astro'
+import { Image } from 'astro:assets';
+import avatar from '../assets/wick3dr0se.png';
 ---
 
-<header id="header">
-    <div id="header__title">
-        <a id="header__title__link" href="/">wick3dr0se</a>
+<header>
+    <div id="title">
+        <a id="title__link" href="/">wick3dr0se</a>
     </div>
     <a id="avatar" href="https://github.com/wick3dr0se">
-        <img id="avatar__img" src="/wick3dr0se.png" alt="wick3dr0se avatar"/>
+        <Image id="avatar__img" src={avatar} alt="wick3dr0se avatar" loading="eager"/>
     </a>
     <Nav/>
 </header>
@@ -15,7 +17,7 @@ import Nav from './Nav.astro'
 <style lang="scss">
     @import '../common.css';
 
-    #header {
+    header {
         position: fixed;
         top: 0;
         left: 0;
@@ -26,7 +28,7 @@ import Nav from './Nav.astro'
         padding: 0 2%;
         background-color: var(--royal);
         box-shadow: 0 1px 5px #00000096;
-        &__title {
+        #title {
             text-align: center;
             margin: 1vh 0;
             font-family: "Pacifico", cursive;
@@ -48,9 +50,7 @@ import Nav from './Nav.astro'
                     opacity: 0;
                     transition: opacity 0.3s ease;
                 }
-                &:hover::after {
-                    opacity: 1;
-                }
+                &:hover::after { opacity: 1; }
             }
         }
         #avatar {
@@ -58,9 +58,7 @@ import Nav from './Nav.astro'
             display: block;
             margin: 0 auto;
             transition: transform 0.3s ease-in-out;
-            &:hover {
-                transform: scale(1.1);
-            }
+            &:hover { transform: scale(1.1); }
             &__img {
                 width: 100%;
                 height: auto;
@@ -69,11 +67,7 @@ import Nav from './Nav.astro'
         }
     }
     @keyframes shake {
-        0% {
-            transform: rotate(9deg);
-        }
-        100% {
-            transform: rotate(-9deg);
-        }
+        0% { transform: rotate(9deg); }
+        100% { transform: rotate(-9deg); }
     }
 </style>
