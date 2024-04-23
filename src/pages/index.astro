@@ -34,8 +34,9 @@ import { Icon } from 'astro-icon/components';
 <style lang="scss">
 	#lang {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
 		flex-wrap: wrap;
+    width: 100%;
 		&__bash { color: #3c4549; }
 		&__nim { color: #efd200; }
 		&__c { color: #5869b8; }
@@ -46,9 +47,10 @@ import { Icon } from 'astro-icon/components';
 		&__docker { color: #0091e5; }
 		&__k8 { color: #2f69da; }
 		svg {
-			width: 40px;
+			min-width: 40px;
 			height: auto;
-			padding: 1vh 2vw;
+      flex-basis: 11%;
+      padding: 1em 2em;
 		}
 	}
 </style>
