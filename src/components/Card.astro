@@ -32,7 +32,7 @@ const data = await getGHData(href);
             <span><Icon name="octicon:star-24" id="stars"/> {data.stargazers_count}</span>
         </section>
     ) : (
-        <p>Error: Failed parsing repository</p>
+        <p>Error: Failed fetching repository</p>
     )}
 </div>
 
@@ -40,8 +40,8 @@ const data = await getGHData(href);
     #card {
         min-width: 200px;
         max-width: 400px;
-        padding: 2% 2% 0 2%;
         margin: 2% 2%;
+        padding: 2% 2% 0 2%;
         border-radius: 15px;
         background-color: var(--surface1);
         color: white;

@@ -14,32 +14,30 @@ const items = ["Blog", "Projects", "Services", "Contact"];
 
     #list{
         width: 80%;
-        list-style-type: none;
         margin: 0 auto;
         padding: 0;
+        list-style-type: none;
         &__btn {
             position: relative;
             &__link {
+                width: 100%;
                 display: block;
                 padding: 10% 0;
-                width: 100%;
-                text-align:center;
+                text-align: center;
                 font-size: 4vw;
-                background: none;
                 text-decoration: none;
+                background: none;
                 color: var(--text);
                 &::after {
-                    content: '';
+                    width: 0;
+                    height: 1px;
                     position: absolute;
                     bottom: 0;
                     left: 0;
-                    width: 0;
-                    height: 1px;
+                    content: '';
                     transition: width 0.3s ease-in-out;
                 }
-                &:hover::after {
-                    width: 100%;
-                }
+                &:hover::after { width: 100%; }
             }
             @for $i from 1 through length($nav-colors) {
                 &:nth-child(#{$i}) &__link:hover:after {
